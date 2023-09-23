@@ -12,12 +12,11 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
-import { TitleInHeaderForDesktop } from './Drawer.style';
+import { TitleInHeaderForDesktop } from './Header.style';
 
 const pages = [
   { name: translations.HEADER.HOME, link: 'home' },
@@ -28,9 +27,8 @@ const pages = [
 
 const drawerWidth = 240;
 const Header = () => {
-  const navigate = useNavigate();
-
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -40,8 +38,6 @@ const Header = () => {
     navigate(page.link);
     setMobileOpen(false);
   };
-
-  console.log('i am');
 
   const MenuItemsInHeaderForDesktop = () => (
     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -91,14 +87,14 @@ const Header = () => {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: 'block' },
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
-              background: '#ddd',
+              background: '#eee',
             },
           }}
         >
@@ -108,7 +104,6 @@ const Header = () => {
               {pages.map((page) => (
                 <ListItem key={page.name} disablePadding>
                   <ListItemButton onClick={() => onPageClick(page)}>
-                    <ListItemIcon></ListItemIcon>
                     <ListItemText primary={page.name} />
                   </ListItemButton>
                 </ListItem>
