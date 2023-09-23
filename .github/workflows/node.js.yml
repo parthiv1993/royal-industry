@@ -30,7 +30,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: cd royal-industry && npm install
+      run: ls && cd royal-industry && npm install
 
     - name: Build
       run: npm run build
