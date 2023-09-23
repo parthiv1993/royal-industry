@@ -218,5 +218,14 @@
       "PRODUCT_CODE": "STRETCH FILM ROLLS",
       "HARDNESS": "Soft"
     }
+  },
+  "ENQUIRY": {
+    "HEADING": "Send your enquiry",
+    "PRODUCT_INTERESTED": "Product interested in",
+    "LENGTH": "Length",
+    "WIDTH": "Width",
+    "WEIGHT": "Weight",
+    "MORE_DETAILS": "More Details",
+    "SEND_ENQUIRY_ON_WHATSAPP": "Send enquiry on whatsapp"
   }
 }

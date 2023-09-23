@@ -6,20 +6,23 @@ import theme from './theme';
 import { Container } from '@mui/material';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import { ModalContextProvider } from './Context/ModalContext';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className='App'>
-        <Header />
-        <div style={{ paddingBlock: 16 }}>
-          <Container>
-            <Outlet />
-          </Container>
+    <ModalContextProvider>
+      <ThemeProvider theme={theme}>
+        <div className='App'>
+          <Header />
+          <div style={{ paddingBlock: 16 }}>
+            <Container>
+              <Outlet />
+            </Container>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </ModalContextProvider>
   );
 }
 

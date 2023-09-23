@@ -8,7 +8,12 @@ import {
   Mail as MailIcon,
 } from '@mui/icons-material';
 import { ContactCard, ContactCardContent } from './Contact.style';
-import { callOwner, locateIndustryOnMaps, sendMail, sendMessageOnWhatsapp } from './ContactService';
+import {
+  callOwner,
+  locateIndustryOnMaps,
+  sendMail,
+  sendMessageOnWhatsapp,
+} from '../../util/ContactService';
 
 const ContactUsForm = () => {
   const onWhatsAppClick = (e) => {

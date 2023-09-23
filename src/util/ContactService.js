@@ -4,7 +4,7 @@ import {
   MAIL_ID,
   MAIL_SUBJECT,
   PHONE_NUMBER,
-} from '../../data/contactInfo';
+} from '../data/contactInfo';
 
 export const sendMessageOnWhatsapp = (text) => {
   const encoded = encodeURIComponent(text);
