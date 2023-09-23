@@ -8,7 +8,6 @@ export const TitleInHeaderForDesktop = styled(Typography).attrs({
   sx: {
     mr: 2,
     display: 'flex',
-    flexGrow: 1,
     fontFamily: 'monospace',
     fontWeight: 700,
     color: 'inherit',

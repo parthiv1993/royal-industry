@@ -13,6 +13,7 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Divider,
 } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
@@ -25,7 +26,7 @@ const pages = [
   { name: translations.HEADER.CONTACT_US, link: 'contact' },
 ];
 
-const drawerWidth = 240;
+const drawerWidth = 160;
 const Header = () => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Header = () => {
     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
       {pages.map((page) => (
         <Button
-          key={page.name}
+          key={`${page.name}-page`}
           onClick={() => onPageClick(page)}
           sx={{ my: 2, color: 'white', display: 'block' }}
         >
@@ -56,7 +57,7 @@ const Header = () => {
   return (
     <>
       <AppBar position='sticky'>
-        <Container maxWidth='xl'>
+        <Container>
           <Toolbar disableGutters>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -98,18 +99,23 @@ const Header = () => {
             },
           }}
         >
-          <div>
-            <Toolbar />
-            <List>
-              {pages.map((page) => (
-                <ListItem key={page.name} disablePadding>
-                  <ListItemButton onClick={() => onPageClick(page)}>
+          <Toolbar />
+          <List>
+            <Divider light />
+            {pages.map((page) => (
+              <React.Fragment key={`${page.name}-menu-item`}>
+                <ListItem disablePadding>
+                  <ListItemButton
+                    key={`${page.name}-menu-button`}
+                    onClick={() => onPageClick(page)}
+                  >
                     <ListItemText primary={page.name} />
                   </ListItemButton>
                 </ListItem>
-              ))}
-            </List>
-          </div>
+                <Divider light />
+              </React.Fragment>
+            ))}
+          </List>
         </Drawer>
       </Box>
     </>
