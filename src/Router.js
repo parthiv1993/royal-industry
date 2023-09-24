@@ -15,66 +15,72 @@ import PlasticCarryBags from './Screens/Products/ProductPages/PlasticCarryBags';
 import PolytheneBags from './Screens/Products/ProductPages/PolytheneBags';
 import StretchFilmRolls from './Screens/Products/ProductPages/StretchFilmRolls';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    Component: App,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: 'home',
-        Component: Home,
-      },
-      {
-        path: 'about',
-        Component: About,
-      },
-      {
-        path: 'products',
-        Component: Products,
-      },
-      {
-        path: 'products/bio-hazard-bags',
-        Component: BioHazardBags,
-      },
-      {
-        path: 'products/garbage-bags',
-        Component: GarbageBags,
-      },
-      {
-        path: 'products/garbage-bag-rolls',
-        Component: GarbageBagRolls,
-      },
-      {
-        path: 'products/ldpe-grocery-bags',
-        Component: LDPEGroceryBags,
-      },
-      {
-        path: 'products/ldpe-shrink-films',
-        Component: LDPEShrinkFilms,
-      },
-      {
-        path: 'products/nursery-bags',
-        Component: NurseryBags,
-      },
-      {
-        path: 'products/plastic-carry-bags',
-        Component: PlasticCarryBags,
-      },
-      {
-        path: 'products/polythene-bags',
-        Component: PolytheneBags,
-      },
-      {
-        path: 'products/stretch-film-rolls',
-        Component: StretchFilmRolls,
-      },
-      {
-        path: 'contact',
-        Component: Contact,
-      },
-    ],
-  },
-]);
+export const basename = '.';
+
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      Component: App,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: 'home',
+          Component: Home,
+        },
+        {
+          path: 'about',
+          Component: About,
+        },
+        {
+          path: 'products',
+          Component: Products,
+        },
+        {
+          path: 'products/bio-hazard-bags',
+          Component: BioHazardBags,
+        },
+        {
+          path: 'products/garbage-bags',
+          Component: GarbageBags,
+        },
+        {
+          path: 'products/garbage-bag-rolls',
+          Component: GarbageBagRolls,
+        },
+        {
+          path: 'products/ldpe-grocery-bags',
+          Component: LDPEGroceryBags,
+        },
+        {
+          path: 'products/ldpe-shrink-films',
+          Component: LDPEShrinkFilms,
+        },
+        {
+          path: 'products/nursery-bags',
+          Component: NurseryBags,
+        },
+        {
+          path: 'products/plastic-carry-bags',
+          Component: PlasticCarryBags,
+        },
+        {
+          path: 'products/polythene-bags',
+          Component: PolytheneBags,
+        },
+        {
+          path: 'products/stretch-film-rolls',
+          Component: StretchFilmRolls,
+        },
+        {
+          path: 'contact',
+          Component: Contact,
+        },
+      ],
+    },
+  ],
+  // eslint-disable-next-line no-undef
+  // { basename: process.env.PUBLIC_URL },
+);
 
 export default router;

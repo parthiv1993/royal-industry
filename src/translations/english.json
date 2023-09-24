@@ -226,6 +226,7 @@
     "WIDTH": "Width",
     "WEIGHT": "Weight",
     "MORE_DETAILS": "More Details",
-    "SEND_ENQUIRY_ON_WHATSAPP": "Send enquiry on whatsapp"
+    "SEND_ENQUIRY_ON_WHATSAPP": "Send enquiry via whatsapp",
+    "SEND_ENQUIRY_ON_MAIL": "Send enquiry via Mail"
   }
 }

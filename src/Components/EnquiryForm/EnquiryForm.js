@@ -12,10 +12,12 @@ import {
   TextareaAutosize,
   Typography,
 } from '@mui/material';
+import { WhatsApp as WhatsAppIcon, Mail as MailIcon } from '@mui/icons-material';
 import translations from '../../translations';
 import { useState } from 'react';
 import products from '../../data/products';
-import { sendMessageOnWhatsapp } from '../../util/ContactService';
+import { sendMail, sendMessageOnWhatsapp } from '../../util/ContactService';
+import { MAIL_SUBJECT } from '../../data/contactInfo';
 
 const EnquiryForm = ({ product, length, width, weight, details }) => {
   const [formValues, setFormValues] = useState({
@@ -31,20 +33,19 @@ const EnquiryForm = ({ product, length, width, weight, details }) => {
     ev.preventDefault();
   };
 
-  const sendEnquiry = () => {
+  const sendEnquiry = (mode) => {
     const message = `
+      Hi Sankit,
+      Here are my Requirements
       Product : ${formValues.product}
-
       length : ${formValues.length}
-
       width : ${formValues.width}
-
       weight : ${formValues.weight}
-
       details : ${formValues.details}
     `;
 
-    sendMessageOnWhatsapp(message);
+    if (mode === 'WHATSAPP') sendMessageOnWhatsapp(message);
+    else sendMail({ body: message, subject: MAIL_SUBJECT });
   };
 
   return (
@@ -118,8 +119,22 @@ const EnquiryForm = ({ product, length, width, weight, details }) => {
           </FormControl>
         </div>
 
-        <Button variant='contained' style={{ marginBlock: 16 }} onClick={sendEnquiry}>
+        <Button
+          variant='contained'
+          style={{ marginBlock: 16 }}
+          onClick={sendEnquiry.bind(null, 'WHATSAPP')}
+          endIcon={<WhatsAppIcon fontSize='large' />}
+        >
           {translations.ENQUIRY.SEND_ENQUIRY_ON_WHATSAPP}
+        </Button>
+
+        <Button
+          variant='contained'
+          style={{ marginBlock: 16 }}
+          onClick={sendEnquiry.bind(null, 'MAIL')}
+          endIcon={<MailIcon fontSize='large' />}
+        >
+          {translations.ENQUIRY.SEND_ENQUIRY_ON_MAIL}
         </Button>
       </Container>
     </Box>
