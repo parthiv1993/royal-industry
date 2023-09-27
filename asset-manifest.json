@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/royal-industry/static/css/main.e6c13ad2.css",
-    "main.js": "/royal-industry/static/js/main.aeb885c7.js",
+    "main.js": "/royal-industry/static/js/main.f3173947.js",
     "static/js/787.1ef04fba.chunk.js": "/royal-industry/static/js/787.1ef04fba.chunk.js",
     "index.html": "/royal-industry/index.html",
     "main.e6c13ad2.css.map": "/royal-industry/static/css/main.e6c13ad2.css.map",
-    "main.aeb885c7.js.map": "/royal-industry/static/js/main.aeb885c7.js.map",
+    "main.f3173947.js.map": "/royal-industry/static/js/main.f3173947.js.map",
     "787.1ef04fba.chunk.js.map": "/royal-industry/static/js/787.1ef04fba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.aeb885c7.js"
+    "static/js/main.f3173947.js"
   ]
 }
