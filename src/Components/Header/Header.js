@@ -40,6 +40,9 @@ const Header = () => {
     setMobileOpen(false);
   };
 
+  // eslint-disable-next-line no-undef
+  const baseurl = process.env.PUBLIC_URL;
+
   const MenuItemsInHeaderForDesktop = () => (
     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
       {pages.map((page) => (
@@ -71,7 +74,7 @@ const Header = () => {
                 <MenuIcon />
               </IconButton>
             </Box>
-            <TitleInHeaderForDesktop href='/home'>
+            <TitleInHeaderForDesktop href={`${baseurl}/home`}>
               {translations.HEADER.COMPANY_NAME}
             </TitleInHeaderForDesktop>
             <MenuItemsInHeaderForDesktop />

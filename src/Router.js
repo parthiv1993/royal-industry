@@ -1,5 +1,5 @@
-import App from './App';
-import { createBrowserRouter } from 'react-router-dom';
+// import App from './App';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import About from './Screens/About';
 import Home from './Screens/Home';
 import Products from './Screens/Products';
@@ -15,13 +15,14 @@ import PlasticCarryBags from './Screens/Products/ProductPages/PlasticCarryBags';
 import PolytheneBags from './Screens/Products/ProductPages/PolytheneBags';
 import StretchFilmRolls from './Screens/Products/ProductPages/StretchFilmRolls';
 
-export const basename = '.';
+// eslint-disable-next-line no-undef
+const baseurl = process.env.PUBLIC_URL;
 
 const router = createBrowserRouter(
   [
     {
       path: '/',
-      Component: App,
+      element: <Navigate to={'/home'} />,
       errorElement: <ErrorPage />,
       children: [
         {
@@ -76,11 +77,13 @@ const router = createBrowserRouter(
           path: 'contact',
           Component: Contact,
         },
+        {
+          path: '*',
+        },
       ],
     },
   ],
-  // eslint-disable-next-line no-undef
-  // { basename: process.env.PUBLIC_URL },
+  { basename: baseurl },
 );
 
 export default router;

@@ -12,15 +12,13 @@ function App() {
   return (
     <ModalContextProvider>
       <ThemeProvider theme={theme}>
-        <div className='App'>
-          <Header />
-          <div style={{ paddingBlock: 16 }}>
-            <Container>
-              <Outlet />
-            </Container>
-          </div>
-          <Footer />
+        <Header />
+        <div style={{ paddingBlock: 16 }}>
+          <Container>
+            <Outlet />
+          </Container>
         </div>
+        <Footer />
       </ThemeProvider>
     </ModalContextProvider>
   );
