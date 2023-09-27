@@ -77,9 +77,6 @@ const router = createBrowserRouter(
           path: 'contact',
           Component: Contact,
         },
-        {
-          path: '*',
-        },
       ],
     },
   ],
