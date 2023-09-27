@@ -1,5 +1,5 @@
-// import App from './App';
-import { Navigate, createBrowserRouter } from 'react-router-dom';
+import App from './App';
+import { createBrowserRouter } from 'react-router-dom';
 import About from './Screens/About';
 import Home from './Screens/Home';
 import Products from './Screens/Products';
@@ -22,7 +22,7 @@ const router = createBrowserRouter(
   [
     {
       path: '/',
-      element: <Navigate to={'/home'} />,
+      Component: App,
       errorElement: <ErrorPage />,
       children: [
         {
