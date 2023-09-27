@@ -20,7 +20,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { TitleInHeaderForDesktop } from './Header.style';
 
 const pages = [
-  { name: translations.HEADER.HOME, link: 'home' },
+  { name: translations.HEADER.HOME, link: '' },
   { name: translations.HEADER.ABOUT_US, link: 'about' },
   { name: translations.HEADER.PRODUCTS, link: 'products' },
   { name: translations.HEADER.CONTACT_US, link: 'contact' },
@@ -74,7 +74,7 @@ const Header = () => {
                 <MenuIcon />
               </IconButton>
             </Box>
-            <TitleInHeaderForDesktop href={`${baseurl}/home`}>
+            <TitleInHeaderForDesktop href={`${baseurl}/`}>
               {translations.HEADER.COMPANY_NAME}
             </TitleInHeaderForDesktop>
             <MenuItemsInHeaderForDesktop />

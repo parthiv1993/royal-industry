@@ -26,7 +26,7 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
       children: [
         {
-          path: 'home',
+          index: true,
           Component: Home,
         },
         {
@@ -35,43 +35,48 @@ const router = createBrowserRouter(
         },
         {
           path: 'products',
-          Component: Products,
-        },
-        {
-          path: 'products/bio-hazard-bags',
-          Component: BioHazardBags,
-        },
-        {
-          path: 'products/garbage-bags',
-          Component: GarbageBags,
-        },
-        {
-          path: 'products/garbage-bag-rolls',
-          Component: GarbageBagRolls,
-        },
-        {
-          path: 'products/ldpe-grocery-bags',
-          Component: LDPEGroceryBags,
-        },
-        {
-          path: 'products/ldpe-shrink-films',
-          Component: LDPEShrinkFilms,
-        },
-        {
-          path: 'products/nursery-bags',
-          Component: NurseryBags,
-        },
-        {
-          path: 'products/plastic-carry-bags',
-          Component: PlasticCarryBags,
-        },
-        {
-          path: 'products/polythene-bags',
-          Component: PolytheneBags,
-        },
-        {
-          path: 'products/stretch-film-rolls',
-          Component: StretchFilmRolls,
+          children: [
+            {
+              index: true,
+              Component: Products,
+            },
+            {
+              path: 'bio-hazard-bags',
+              Component: BioHazardBags,
+            },
+            {
+              path: 'garbage-bags',
+              Component: GarbageBags,
+            },
+            {
+              path: 'garbage-bag-rolls',
+              Component: GarbageBagRolls,
+            },
+            {
+              path: 'ldpe-grocery-bags',
+              Component: LDPEGroceryBags,
+            },
+            {
+              path: 'ldpe-shrink-films',
+              Component: LDPEShrinkFilms,
+            },
+            {
+              path: 'nursery-bags',
+              Component: NurseryBags,
+            },
+            {
+              path: 'plastic-carry-bags',
+              Component: PlasticCarryBags,
+            },
+            {
+              path: 'polythene-bags',
+              Component: PolytheneBags,
+            },
+            {
+              path: 'stretch-film-rolls',
+              Component: StretchFilmRolls,
+            },
+          ],
         },
         {
           path: 'contact',

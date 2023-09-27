@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
       <Card sx={{ maxWidth: 345 }} onClick={onProductClick}>
         <CardActionArea>
           <ProductCardImageContainer>
-            <ProductCardImage src={product.imageUrl} />
+            <ProductCardImage src={product.imageUrl} alt={product.name} />
           </ProductCardImageContainer>
           <CardContent>
             <ProductCardTitle>{product.name}</ProductCardTitle>
